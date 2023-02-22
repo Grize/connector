@@ -1,0 +1,15 @@
+default: &default
+  public_key: 'some_key'
+  private_key: 'some_key'
+  app_id: 'ouVH10oHPspjRvpnlULmYg'
+  app_secret: 'kLTBdzOJxY1ATrcFFxO_DvZB_JwCOxI0Ght5FrWl0mw'
+
+development:
+  <<: *default
+  private_certificate_path: './config/certificates/app_private.pem'
+  public_certificate_path: './config/certificates/app_public.pem'
+
+test:
+  <<: *default
+  private_certificate_path: './spec/test_certificates/app_private.pem'
+  public_certificate_path: './spec/test_certificates/app_public.pem'
