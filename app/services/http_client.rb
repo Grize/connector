@@ -12,13 +12,15 @@ class HttpClient
   end
 
   def call
-    HTTP.headers(**headers).send(method, path)
+    Rails.logger.info "Making request with method: #{method}, with headers: #{headers}, payload: #{payload}, path: {path}"
+    response = HTTP.headers(**headers).send(method, path)
+    Rails.logger.info "response: #{response}"
   end
 
   private
 
   def path
-    File.join(salt_edge_path, endpoint)
+    "#{salt_edge_path}/#{endpoint}"
   end
 
   def headers
