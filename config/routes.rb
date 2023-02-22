@@ -6,5 +6,6 @@ Rails.application.routes.draw do
       end
     end
   end
+  use_doorkeeper
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end
