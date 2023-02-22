@@ -32,7 +32,7 @@ module Token
     def data_payload
       {
         session_secret: params['session_secret'],
-        redirect_url: "#{redirect_url}?client_id=#{application.uid}&{redirect_uri=params['redirect_url']}"
+        redirect_url: "#{redirect_url}?client_id=#{application.uid}&redirect_uri=&{params['redirect_url']}"
       }
     end
   end
