@@ -11,7 +11,7 @@ module Token
 
     def call
       super
-      REDIS_CLIENT.set(params['session_secret'], token_data)
+      # REDIS_CLIENT.set(params['session_secret'], token_data)
     end
 
     private

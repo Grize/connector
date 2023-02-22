@@ -41,7 +41,7 @@ module Token
     end
 
     def token_data
-      REDIS_CLIENT.get(params['session_secret'])
+      # REDIS_CLIENT.get(params['session_secret'])
     end
   end
 end
