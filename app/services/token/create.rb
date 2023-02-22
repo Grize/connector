@@ -36,10 +36,6 @@ module Token
       Doorkeeper::AccessToken.create(**token_params).token
     end
 
-    def application_id
-      Doorkeeper::Application.find_by(name: token_data['app_name']).id
-    end
-
     def token_data
       # REDIS_CLIENT.get(params['session_secret'])
     end

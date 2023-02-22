@@ -16,5 +16,9 @@ module Token
         exp: 2.days.from_now.to_i
       }
     end
+
+    def application
+      Doorkeeper::Application.find_by(name: params['app_name'])
+    end
   end
 end
