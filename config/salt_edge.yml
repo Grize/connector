@@ -1,10 +1,13 @@
 default: &default
-  host: 'http://salt_edge.demo/api/connectors/v2'
+  host: 'https://priora-demo.saltedge.com/api/connectors/v2'
+  certificate_path: './config/certificates/salt_edge.pem'
 
 development:
   <<: *default
-  certificate_path: './config/certificates/salt_edge.pem'
 
 test:
   <<: *default
   certificate_path: './spec/test_certificates/salt_edge_public.pem'
+
+production:
+  <<: *default
