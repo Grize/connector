@@ -12,7 +12,7 @@ class HttpClient
   end
 
   def call
-    Rails.logger.info "Making request with method: #{method}, with headers: #{headers}, payload: #{payload}, path: {path}"
+    Rails.logger.info "Making request with method: #{method}, with headers: #{headers}, payload: #{payload}, path: #{path}"
     response = HTTP.headers(**headers).send(method, path)
     Rails.logger.info "response: #{response}"
   end
