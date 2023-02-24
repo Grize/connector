@@ -1,5 +1,6 @@
 class CreateTokenAndApplication < ActiveRecord::Migration[7.0]
   def change
+    enable_extension 'pgcrypto'
     create_table :applications do |t|
       t.text :uid, null: false
       t.text :name, null: false
@@ -8,7 +9,7 @@ class CreateTokenAndApplication < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    create_table :tokens do |t|
+    create_table :tokens, id: :uuid do |t|
       t.text :token, null: false
       t.text :redirect_uri, null: false
       t.text :status, null: false

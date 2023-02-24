@@ -3,7 +3,7 @@ module Api
     module V2
       class TokensController < ApplicationController
         def create
-          Tokens::Prepare.new(auth_signature, api_priora_v2_authorizations_url).call
+          Tokens::Prepare.new(auth_signature, new_api_priora_v2_authorization_url).call
           render status: 200, body: {}
         end
 

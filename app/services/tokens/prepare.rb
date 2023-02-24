@@ -24,7 +24,7 @@ module Tokens
     def data_payload
       {
         session_secret: params['session_secret'],
-        redirect_url: "#{redirect_url}?client_id=#{application.uid}&token=#{token.token}"
+        redirect_url: "#{redirect_url}?client_id=#{application.uid}&token_id=#{token.id}"
       }
     end
 

@@ -27,8 +27,8 @@ RSpec.describe Api::Priora::V2::TokensController, type: :controller do
     end
 
     let(:salt_edge_payload) do
-      redirect_uri = 'http://test.host/api/priora/v2/authorizations?'\
-                     "client_id=#{application.uid}&token=blTC91cT8cvXWpjWq8yy8w"
+      redirect_uri = 'http://test.host/api/priora/v2/authorizations/new?'\
+                     "client_id=#{application.uid}&token_id=#{Token.first.id}"
       {
         data: {
           session_secret: 'b7k-QxC3vdA-M48pexiS',

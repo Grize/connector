@@ -13,6 +13,7 @@ FactoryBot.define do
   end
 
   factory :token do
+    id { '710b9358-a44e-47d4-baca-957d25dbb1ac' }
     token { SecureRandom.uuid }
     redirect_uri { 'https://example.com' }
     status { 'draft' }

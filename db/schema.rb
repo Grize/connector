@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_02_23_160948) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
@@ -22,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_160948) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tokens", force: :cascade do |t|
+  create_table "tokens", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "token", null: false
     t.text "redirect_uri", null: false
     t.text "status", null: false
