@@ -21,7 +21,10 @@ module Tokens
       {
         session_secret: updated_token.external_token,
         token: updated_token.token,
-        user_id: user.id
+        user_id: user.id,
+        consent: {
+          allPsd2: 'allAccounts'
+        }
       }
     end
 

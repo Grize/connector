@@ -21,7 +21,10 @@ RSpec.describe Api::Priora::V2::AuthorizationsController, type: :controller do
         data: {
           session_secret: 'some_token',
           token: token.token,
-          user_id: user.id
+          user_id: user.id,
+          consent: {
+            allPsd2: 'allAccounts'
+          }
         },
         exp: 2.day.from_now.to_i
       }
