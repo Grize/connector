@@ -12,7 +12,7 @@
       <%= form_tag api_priora_v2_authorizations_path, method: :post do %>
         <%= hidden_field_tag :client_id, @token_params[:application].id, id: nil %>
         <%= hidden_field_tag :token_id, @token_params[:token_id], id: nil %>
-        <%= submit_tag "OK" class: "btn btn-success btn-lg btn-block" %>
+        <%= submit_tag "OK", class: "btn btn-success btn-lg btn-block" %>
       <% end %>
     </div>
   </main>
