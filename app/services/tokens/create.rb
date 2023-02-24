@@ -30,7 +30,7 @@ module Tokens
     end
 
     def update_token
-      token = Token.find_by(token: params['token'], status: 'draft')
+      token = Token.find_by(id: params['token_id'], status: 'draft')
       token.update(users_id: user.id, status: 'active')
       token
     end
