@@ -13,7 +13,8 @@ module Api
 
         def create
           token = Tokens::Create.new(current_user, auth_params).call
-          redirect_to token.redirect_uri, allow_other_host: true, via: :get
+          url = token.redirect_uri.split('?').first
+          redirect_to url, allow_other_host: true, via: :get
         end
 
         private
