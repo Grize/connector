@@ -3,6 +3,9 @@ default: &default
 
 test:
   <<: *default
+  salt_edge:
+    app_id: 'some_id'
+    app_secret: 'some_secret'
   private_certificate_path: './spec/test_certificates/app_private.pem'
   public_certificate_path: './spec/test_certificates/app_public.pem'
 

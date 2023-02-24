@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authorization</title>
+  </head>
+  <main>
+    <p class="h4">
+      <%= raw t('.prompt', client_name: content_tag(:strong, class: 'text-info') { @token_params[:application].name }) %>
+    </p>
+
+    <div class="action">
+      <%= form_tag api_priora_v2_authorizations_path, method: :post do %>
+        <%= hidden_field_tag :client_id, @token_params[:application].id, id: nil %>
+        <%= hidden_field_tag :redirect_uri, @token_params[:redirect_uri], id: nil %>
+        <%= hidden_field_tag :external_token, @token_params[:external_token]%>
+        <%= submit_tag  class: "btn btn-success btn-lg btn-block" %>
+      <% end %>
+    </div>
+  </main>
+</html>
+

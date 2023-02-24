@@ -20,14 +20,14 @@ class HttpClient
   private
 
   def path
-    "#{salt_edge_path}/#{endpoint}"
+    "#{SaltEdge.salt_edge_path}/#{endpoint}"
   end
 
   def headers
     {
       "Authorization": "Bearer #{encode(payload)}",
-      "App-Id": app_id,
-      "App-Secret": app_secret
+      "App-Id": AppConfig.app_id,
+      "App-Secret": AppConfig.app_secret
     }
   end
 end

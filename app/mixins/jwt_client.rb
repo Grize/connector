@@ -1,12 +1,9 @@
 module JwtClient
-  include SaltEdge
-  include AppConfig
-
-  def decode(signature)
-    JWT.decode(signature, salt_edge_public_key, true, algorithm)
+  def decode(signature, public_key = SaltEdge.public_key)
+    JWT.decode(signature, public_key, true, algorithm)
   end
 
-  def encode(payload)
+  def encode(payload, private_key = AppConfig.private_key)
     JWT.encode(payload, private_key, 'RS256')
   end
 

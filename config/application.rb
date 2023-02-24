@@ -35,7 +35,6 @@ module Connector
     config.generators.system_tests = nil
     config.to_prepare do
       # Only Applications list
-      Doorkeeper::ApplicationsController.layout 'application'
     end
   end
 end

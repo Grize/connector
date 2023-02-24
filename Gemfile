@@ -15,7 +15,6 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "redis", "~> 4.0"
 gem 'devise'
-gem 'doorkeeper'
 gem 'jwt'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
@@ -34,6 +33,8 @@ group :development, :test do
   gem 'pry'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rubocop'
   gem "webmock"
 end

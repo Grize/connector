@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'priora' do
       namespace 'v2' do
-        resources :tokens, only: [:create]
+        post :tokens, to: 'tokens#create'
+        resources :authorizations, only: [:new, :create]
       end
     end
   end
-  use_doorkeeper
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users
 end
