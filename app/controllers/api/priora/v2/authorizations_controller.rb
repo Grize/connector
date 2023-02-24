@@ -14,7 +14,7 @@ module Api
         def create
           token = Tokens::Create.new(current_user, auth_params).call
           url = token.redirect_uri.split('?').first
-          redirect_to url, allow_other_host: true, via: :get
+          redirect_to url, allow_other_host: true, status: 303
         end
 
         private
