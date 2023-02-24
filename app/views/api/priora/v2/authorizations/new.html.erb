@@ -11,8 +11,7 @@
     <div class="action">
       <%= form_tag api_priora_v2_authorizations_path, method: :post do %>
         <%= hidden_field_tag :client_id, @token_params[:application].id, id: nil %>
-        <%= hidden_field_tag :redirect_uri, @token_params[:redirect_uri], id: nil %>
-        <%= hidden_field_tag :external_token, @token_params[:external_token]%>
+        <%= hidden_field_tag :token_id, @token_params[:token_id], id: nil %>
         <%= submit_tag  class: "btn btn-success btn-lg btn-block" %>
       <% end %>
     </div>

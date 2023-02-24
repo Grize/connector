@@ -40,7 +40,7 @@ RSpec.describe Api::Priora::V2::AuthorizationsController, type: :controller do
 
     it 'create token' do
       sign_in user
-      post :create, params: { client_id: application.id, token: token.token }
+      post :create, params: { client_id: application.id, token_id: token.id }
       expect(WebMock).to have_requested(:patch, 'https://priora.saltedge.com/api/connectors/v2/sessions/some_token/success')
         .with(headers: { 'App-Id': 'some_id', 'App-Secret': 'some_secret', 'Authorization': request_signature})
 

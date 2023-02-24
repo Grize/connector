@@ -7,7 +7,7 @@ module Api
         def new
           @token_params = {
             application: Application.find_by(uid: auth_params['client_id']),
-            redirect_uri: auth_params['redirect_uri']
+            token_id: auth_params['token_id']
           }
         end
 
@@ -19,7 +19,7 @@ module Api
         private
 
         def auth_params
-          params.permit(:client_id, :token)
+          params.permit(:client_id, :token_id)
         end
       end
     end
