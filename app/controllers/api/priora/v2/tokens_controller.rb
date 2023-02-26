@@ -7,6 +7,11 @@ module Api
           render status: 200, body: {}
         end
 
+        def update
+          Tokens::Revoke.new(request.headers['Access-Token']).call
+          render status: 200, body: {}
+        end
+
         private
 
         def auth_signature

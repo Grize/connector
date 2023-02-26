@@ -1,4 +1,4 @@
 class Token < ApplicationRecord
-  belongs_to :users, class_name: 'User', optional: true
-  belongs_to :applications, class_name: 'Application'
+  belongs_to :user, class_name: 'User', optional: true
+  belongs_to :application, class_name: 'Application'
 end

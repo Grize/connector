@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Api::Priora::V2::AuthorizationsController, type: :controller do
-  let(:user) { create(:user) }
+  let!(:user) { create(:user) }
   let(:application) { create(:application) }
-  let!(:token) { create(:token, applications_id: application.id) }
+  let!(:token) { create(:token, application_id: application.id) }
 
   describe 'GET new' do
-    let(:application) { create(:application) }
-
     it 'return application record' do
       sign_in user
       get :new, params: { client_id: application.uid, redirect_uri: 'http://example.org' }
@@ -49,7 +47,7 @@ RSpec.describe Api::Priora::V2::AuthorizationsController, type: :controller do
 
       token.reload
       expect(token.status).to eq('active')
-      expect(token.users_id).to eq(user.id)
+      expect(token.user_id).to eq(user.id)
     end
   end
 end

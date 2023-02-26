@@ -1,10 +1,10 @@
 module Tokens
   class Base
-    def call
+    private
+
+    def request_salt_edge
       HttpClient.new(endpoint, payload, :patch).call
     end
-
-    private
 
     def endpoint
       raise NowImplementedError

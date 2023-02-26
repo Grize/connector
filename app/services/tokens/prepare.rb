@@ -12,7 +12,7 @@ module Tokens
 
     def call
       @token = create_token
-      super
+      request_salt_edge
     end
 
     private
@@ -35,9 +35,10 @@ module Tokens
     def create_token
       Token.create(
         external_token: params['session_secret'],
-        applications_id: application.id,
+        application_id: application.id,
         redirect_uri: params['redirect_url'],
         token: SecureRandom.urlsafe_base64,
+        expired_at: params['valid_until'],
         status: 'draft'
       )
     end

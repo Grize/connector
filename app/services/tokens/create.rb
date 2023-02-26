@@ -11,7 +11,7 @@ module Tokens
 
     def call
       @updated_token = update_token
-      super
+      request_salt_edge
       updated_token
     end
 
@@ -34,7 +34,7 @@ module Tokens
 
     def update_token
       token = Token.find_by(id: params['token_id'], status: 'draft')
-      token.update(users_id: user.id, status: 'active')
+      token.update(user_id: user.id, status: 'active')
       token
     end
   end

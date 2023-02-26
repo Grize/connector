@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+```
+bundle exec rails db:create
+bundle exec rails db:migrate
+```
 
-Things you may want to cover:
+## Tests
+```
+bundle exec rspec
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Unfortunately, the integration of endpoints for accounts and transactions had to be done blindly, without the ability to test it on a test environment.
+Also, need to think about how to change the structure of the transaction table and remove the fields from the date column.
+I apologize for the delay. After gaining access to the test environment, it turned out that the assumptions were incorrect.
